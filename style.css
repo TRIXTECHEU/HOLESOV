@@ -238,7 +238,7 @@ button.vfrc-button[label="Cancel"]:hover {
 /* 4) SETTING THE CHAT BACKGROUND */
 /* 4.1) Chat background */
 :is(.vfrc-chat, .s9t60i1, .vfrc-chat__dialog) {
-  background-image: url("https://trixtecheu.github.io/HOLESOV/pozadí21.jpg") !important;
+  background-image: url("./pozadí21.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -324,7 +324,7 @@ button.vfrc-button[label="Cancel"]:hover {
     translate: 0px;
   }
   .betklmc, .betklm5 {
-    translate: -124px;
+    translate: -324px;
   }
 }
 
