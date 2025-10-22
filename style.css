@@ -289,76 +289,94 @@ button.vfrc-button[label="Cancel"]:hover {
   box-sizing: border-box;
 }
 
-/* 📱 MOBILY (do 767px) - s decentním odsazením místo fullscreen */
+/* 📱 MOBILY (do 767px) */
 @media (max-width: 767px) {
   .s9t60i0 {
-    width: calc(100vw - 20px) !important; /* 10px odsazení z každé strany */
-    height: calc(100vh - 40px) !important; /* 20px odsazení shora a zdola */
+    width: calc(100vw - 20px) !important;
+    height: calc(100vh - 40px) !important;
     max-block-size: calc(100dvh - 40px) !important;
     transform: none !important;
-    border-radius: 25px !important; /* menší zaoblení pro mobil */
-    margin: 0px 20px 0px 0px !important;
+    border-radius: 25px !important;
+    margin: 0 20px 0 0 !important;
     position: fixed !important;
-    top: 20px !important;
-    left: 10px !important;
-    right: 10px !important;
-    bottom: 20px !important;
+    top: 20px !important; left: 10px !important; right: 10px !important; bottom: 20px !important;
   }
+
+  /* dřív: translate: 0px; */
   .betklma, .betklm4, .betklm6, .betklm7 {
-    translate: 0px;
+    -webkit-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+    will-change: transform;
   }
+
+  /* dřív: translate: -158px; (nebo -64px podle tvé verze) */
   .betklmc, .betklm5 {
-    translate: -158px;
+    -webkit-transform: translateX(-158px) !important;  /* změň na -64px, pokud to chceš míň */
+            transform: translateX(-158px) !important;
+    will-change: transform;
   }
 }
 
-/* 💻 MACBOOK MONITORY - pouze pro skutečně malé displeje */
+/* 💻 MACBOOK MONITORY */
 @media (min-width: 768px) and (max-width: 1439px) and (max-device-width: 1440px) {
   .s9t60i0 {
-    width: 110% !important;
-    height: 110% !important;
+    width: 110% !important; height: 110% !important;
     border-radius: 25px !important;
     transform: translate(-35px, 15px) !important;
   }
+
   .betklma, .betklm4, .betklm6, .betklm7 {
-    translate: 0px;
+    -webkit-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+    will-change: transform;
   }
   .betklmc, .betklm5 {
-    translate: -324px;
+    -webkit-transform: translateX(-84px) !important;
+            transform: translateX(-84px) !important;
+    will-change: transform;
   }
 }
 
-/* 🖥️ VELKÉ MONITORY - i když je okno zmenšené */
+/* 🖥️ VELKÉ MONITORY (≥1920 device width) */
 @media (min-width: 768px) and (min-device-width: 1920px) {
   .s9t60i0 {
-    width: 120% !important;
-    height: 105% !important;
+    width: 120% !important; height: 105% !important;
     border-radius: 25px !important;
     transform: translate(-75px, 35px) !important;
   }
+
   .betklma, .betklm4, .betklm6, .betklm7 {
-    translate: 0px;
+    -webkit-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+    will-change: transform;
   }
   .betklmc, .betklm5 {
-    translate: -84px;
+    -webkit-transform: translateX(-84px) !important;
+            transform: translateX(-84px) !important;
+    will-change: transform;
   }
 }
 
-/* 🖥️ STŘEDNÍ MONITORY (Full HD) - i když je okno zmenšené */
+/* 🖥️ STŘEDNÍ MONITORY (1440–1919 device width) */
 @media (min-width: 768px) and (min-device-width: 1440px) and (max-device-width: 1919px) {
   .s9t60i0 {
-    width: 115% !important;
-    height: 112% !important;
+    width: 115% !important; height: 112% !important;
     border-radius: 25px !important;
-    transform: translate(-55px, 0px) !important;
+    transform: translate(-55px, 0) !important;
   }
+
   .betklma, .betklm4, .betklm6, .betklm7 {
-    translate: 0px;
+    -webkit-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+    will-change: transform;
   }
   .betklmc, .betklm5 {
-    translate: -64px;
+    -webkit-transform: translateX(-64px) !important;
+            transform: translateX(-64px) !important;
+    will-change: transform;
   }
 }
+
 
 
 
