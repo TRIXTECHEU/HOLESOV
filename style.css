@@ -151,7 +151,7 @@ div[class*="vfrc-header"] img.vfrc-avatar {
   align-items: center !important;
   justify-content: center !important;
   border-radius: 15px !important;
-  padding: 18px !important;
+  padding: 16px !important;
   line-height: 1 !important;
   color: transparent !important;
   overflow: hidden !important;
@@ -238,7 +238,7 @@ button.vfrc-button[label="Cancel"]:hover {
 /* 4) SETTING THE CHAT BACKGROUND */
 /* 4.1) Chat background */
 :is(.vfrc-chat, .s9t60i1, .vfrc-chat__dialog) {
-  background-image: url("./pozadí21.jpg") !important;
+  background-image: url("https://trixtecheu.github.io/HOLESOV/pozadí21.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -376,7 +376,6 @@ button.vfrc-button[label="Cancel"]:hover {
     will-change: transform;
   }
 }
-
 
 
 
@@ -720,7 +719,7 @@ button.vfrc-button[label="Cancel"]:hover {
   min-height: 75px !important;
   max-width: 75px !important;
   max-height: 75px !important;
-  background-color: #00aced !important;
+  background-color: #007aca !important;
   border-radius: 50% !important;
   overflow: hidden !important;
   display: flex !important;
@@ -844,7 +843,7 @@ div._6r9xee3.o231sh1 {
   position: relative !important;
   z-index: 0 !important;
   border-radius: 15px !important;
-  background-color: #00aced !important;
+  background-color: #007aca !important;
   color: #ffffff !important;
   opacity: 1 !important;
   transform-origin: center center !important;
@@ -934,3 +933,36 @@ div._6r9xee3.o231sh1 > * {
   position: relative;
   background-color: transparent;
 }
+
+
+
+/* základ + mask ikona – stejné jako výše */
+.vfrc-footer .vfrc-button[title="Send"] svg,
+.vfrc-footer .vfrc-button[aria-label="Send"] svg { display:none !important; }
+.vfrc-footer .vfrc-button[title="Send"],
+.vfrc-footer .vfrc-button[aria-label="Send"]{
+  position:relative !important;
+  width:40px; height:40px;
+  color:#9aa3af !important;                 /* default (prázdné) */
+  background:#eef2f7 !important;
+  border-radius: 9999px !important;
+  transition: background .2s ease, color .2s ease, transform .15s ease !important;
+}
+.vfrc-footer .vfrc-button[title="Send"]::before,
+.vfrc-footer .vfrc-button[aria-label="Send"]::before{
+  content:""; position:absolute; inset:0; margin:auto; width:24px; height:24px;
+  background-color: currentColor !important;
+  -webkit-mask: url("./send-hor-svgrepo-com.svg") no-repeat center / contain !important;
+          mask: url("./send-hor-svgrepo-com-2.svg") no-repeat center / contain !important;
+  pointer-events:none !important;
+}
+
+/* AKTIVNÍ: jakmile má textarea/input nějaký text */
+.vfrc-footer:has(textarea:not(:placeholder-shown)) .vfrc-button[title="Send"],
+.vfrc-footer:has(input[type="text"]:not(:placeholder-shown)) .vfrc-button[title="Send"],
+.vfrc-footer:has(textarea:not(:placeholder-shown)) .vfrc-button[aria-label="Send"],
+.vfrc-footer:has(input[type="text"]:not(:placeholder-shown)) .vfrc-button[aria-label="Send"]{
+  color:#ffffff !important;
+  background: linear-gradient(120deg,#006BB3 40%, #007ACA 40%) !important;
+}
+
