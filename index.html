@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Holešov test</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+  
+      body {
+        background-image: url('https://trixtecheu.github.io/HOLESOV/images/monitor.png'); /* nahraď cestou k tvému obrázku */
+        background-size: cover;      /* roztáhne obrázek přes celou obrazovku */
+        background-position: center; /* zarovnání na střed */
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+
+
+<script>
+  ['LoadingAnimationExtension.js', 'TranslateWidget.js', 'PayloadWindow.js'].forEach(name => {
+    document.write(`<script src="https://trixtecheu.github.io/HOLESOV/extensions/${name}"><\/script>`);
+  });
+</script>
+
+<script type="text/javascript">
+(function(d, t) {
+  const v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+
+  v.onload = function() {
+    try {
+      setTimeout(function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6916300e3a541a447be840e6' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          render: { mode: 'overlay' },
+          allowDangerousHTML: true,
+          assistant: {
+            extensions: [window.LoadingAnimationExtension],
+            stylesheet: 'https://trixtecheu.github.io/HOLESOV/style.css'
+          }
+        }).then(() => {
+          if (typeof window.PayloadWindowOnReady === 'function') {
+            try { window.PayloadWindowOnReady(window.voiceflow.chat); } catch (e) { console.error(e); }
+          }
+        });
+      }, 0);
+    } catch (error) {
+      console.error('Error during initialization:', error);
+    }
+  };
+
+  v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs';
+  v.type = 'text/javascript';
+  s.parentNode.insertBefore(v, s);
+})(document, 'script');
+</script>
+<!-- TRIX @2025 -->
+
+  </body>
+</html>
