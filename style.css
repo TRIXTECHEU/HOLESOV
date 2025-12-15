@@ -1,0 +1,1064 @@
+/* TrixTech s.r.o. @2025 */
+
+/* 0) LAYERING */
+/* 0.1) Keep the chat widget above all page content */
+.vfrc-widget {
+  z-index: 999999 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+
+/* 1) HEADER SETTINGS + AVATAR */
+/* 1.1) Header color */
+.vfrc-widget [class*="jyiuei2"]{
+  box-sizing: border-box;
+  height: 65px !important;
+  padding: 12px 16px 12px 12px !important;
+  position: relative;
+  border: none !important;
+  border-radius: 0 !important;
+  background: linear-gradient(120deg, #007ACC 0%, #005B99 50%, #003D66 100%) !important;
+}
+
+/* 1.2) Header avatar */
+div[class*="vfrc-header"] img.vfrc-avatar {
+  display: block !important;
+  height: 130% !important;
+  max-height: 130% !important;
+  width: auto !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+  pointer-events: none !important;
+  -webkit-user-drag: none !important;
+}
+
+
+/* 2) HEADER ICONS */
+/* 2.1) Basic settings for icon buttons */
+.vfrc-header .vfrc-icon._1t7e06e0{
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform: translateX(-0.25px) !important;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.vfrc-header .vfrc-icon._1t7e06e0 svg{
+  display: none !important;
+}
+
+.vfrc-header .vfrc-icon._1t7e06e0::before{
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  filter: brightness(1) !important;
+  transition: transform .6s ease-in-out, filter .8s ease-in-out !important;
+  will-change: transform, filter;
+  pointer-events: none !important;
+}
+
+/* 2.2) Icon button dimensions */
+.vfrc-header button{
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  cursor: pointer !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.vfrc-header button:focus-visible{
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(0,123,204,.35) !important;
+  border-radius: 8px !important;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .vfrc-header .vfrc-icon._1t7e06e0::before{
+    transition: transform .01ms linear, filter .01ms linear !important;
+  }
+}
+
+/* 2.3) Refresh icon settings */
+.vfrc-header button:nth-of-type(1) .vfrc-icon._1t7e06e0::before{
+  width: 38px !important;
+  height: 38px !important;
+  background-image: url("https://trixtecheu.github.io/HOLESOV/images/icons/icon-refresh.svg") !important;
+}
+
+.vfrc-header button:nth-of-type(1):hover .vfrc-icon._1t7e06e0::before,
+.vfrc-header button:nth-of-type(1):focus-visible .vfrc-icon._1t7e06e0::before{
+  transform: translate(-50%, -50%) scale(1.2) rotate(180deg) !important;
+  filter: brightness(1.1) !important;
+}
+
+/* 2.4) Close icon settings */
+.vfrc-header button:nth-of-type(2) .vfrc-icon._1t7e06e0::before{
+  width: 28px !important;
+  height: 28px !important;
+  background-image: url("https://trixtecheu.github.io/HOLESOV/images/icons/icon-close.svg") !important;
+}
+
+.vfrc-header button:nth-of-type(2):hover .vfrc-icon._1t7e06e0::before,
+.vfrc-header button:nth-of-type(2):focus-visible .vfrc-icon._1t7e06e0::before{
+  transform: translate(-50%, -50%) scale(1.2) !important;
+  filter: brightness(1.1) !important;
+}
+
+
+/* 3) SYSTEM BUTTONS (START NEW CHAT / CANCEL) */
+/* 3.1) Modification of the START NEW CHAT and CANCEL buttons*/
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat, button.vfrc-button[label="Cancel"]) {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 15px !important;
+  padding: 16px !important;
+  line-height: 1 !important;
+  color: transparent !important;
+  overflow: hidden !important;
+}
+
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat, button.vfrc-button[label="Cancel"]) span {
+  display: none !important;
+}
+
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat, button.vfrc-button[label="Cancel"])::before {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-family: inherit !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  letter-spacing: .05em !important;
+  white-space: nowrap !important;
+  pointer-events: none !important;
+}
+
+/* 3.2) Modification of the START NEW CHAT button header */
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat) {
+  background: linear-gradient(120deg, #007ACC 0%, #005B99 50%, #003D66 100%) !important;
+  transition: background .2s ease !important;
+  border: 2px solid #deecf5 !important;
+}
+
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat)::before {
+  content: "Spustit nový chat" !important;
+  color: #fff !important;
+}
+
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat)::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0; left: -35%;
+  width: 70%; height: 100%;
+  background: linear-gradient(115deg,
+              rgba(255,255,255,0) 0%,
+              rgba(255,255,255,.32) 50%,
+              rgba(255,255,255,0) 100%);
+  transform: translateX(260%) skewX(-24deg);
+  opacity: 0;
+  transition:
+    transform .95s cubic-bezier(.22,.61,.36,1),
+    opacity   1ms linear .96s !important;
+  pointer-events: none !important;
+  will-change: transform, opacity;
+}
+
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):hover {
+  background: linear-gradient(120deg, #003D66 0%, #005B99 50%, #007ACC 100%) !important;
+  border: 2px solid #deecf5 !important;
+}
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):hover::after {
+  transform: translateX(-260%) skewX(-24deg);
+  opacity: 1;
+  transition:
+    transform .95s cubic-bezier(.22,.61,.36,1),
+    opacity   120ms ease 0s !important;
+}
+
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(0,123,204,.25) !important;
+}
+
+/* 3.3) Modification of the CANCEL button header */
+button.vfrc-button[label="Cancel"] {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+button.vfrc-button[label="Cancel"]::before {
+  content: "Zrušit" !important;
+  color: #1a1e23 !important;
+}
+
+button.vfrc-button[label="Cancel"]:hover {
+  background: #f7f7f7 !important;
+}
+
+
+/* 4) SUBHEADING TEXTS AND ICON FORMATTING */
+/* 4.1) Subheader icon formatting */
+.dio4eo2 {
+  padding: 38px 20px 18px;
+}
+
+.g931q12 {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.dio4eo3 {
+  background-color: rgba(255, 255, 255, 0) !important;
+  clip-path: circle(50% at 50% 50%);
+  -webkit-user-drag: none !important;
+  pointer-events: none !important;
+  position: -75px !important;
+}
+
+/* 4.2) Subheader text formatting */
+.dio4eo4::before {
+  content: "Poznejte město Holešov" !important;
+  font-size: 16px !important;
+  color: #656d75 !important;
+}
+
+/* 4.3) Subheader description formatting */
+.dio4eo5::before {
+  content: "prostřednictvím našeho AI asistenta" !important;
+  font-size: 14px !important;
+  color: #656d75 !important;
+}
+
+
+/* 5) CHATBOT BACKGROUND */
+/* 5.1) Chatbot background */
+:is(.vfrc-chat, .s9t60i1, .vfrc-chat__dialog) {
+  background-image: url("https://trixtecheu.github.io/HOLESOV/images/background.jpg") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+  background-position: center center !important;
+}
+
+._1vj16245 {
+  background: #006BB3 !important;
+}
+
+
+/* 6) CHATBOT AVATAR */
+/* 6.1) Chatbot avatar customization */
+.vfrc-avatar {
+  background-color: transparent !important;
+}
+
+.g931q11 {
+  height: 38px;
+  width: 38px;
+}
+
+/* 6.2) Chatbot avatar clipping */
+.g3dqfd2 {
+  object-fit: cover !important;
+  object-position: center !important;
+    transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  clip-path: circle(50% at 50% 50%);
+  overflow: hidden;
+  -webkit-user-drag: none !important;
+  pointer-events: none !important;
+}
+
+
+/* 7) TYPOPGRAPHY & BUBBLES & BUBBLES FORMATTING */
+/* 7.1) Text alignment formatting */
+:is(.vfrc-message,[class*="vfrc-chat-dialog"],[class*="knxm730"],[class*="_15emaa"],[class*="vfrc-user-response"],[class*="vfrc-system-response"],[class*="g3dqfd"],[class*="response-content"],[class*="streaming-response-container"]) {
+  text-align: left !important;
+}
+
+.vfrc-message, .vfrc-message * {
+  text-align: left !important;
+}
+
+.vfrc-message > * {
+  margin-left: 0 !important;
+}
+
+/* 7.2) User message formatting */
+._15emaa40 {
+  font-weight: 700;
+  font-size: 15.5px;
+  border-radius: 20px !important;
+  padding: 12px 16px 12px;
+  background-color: #005B99!important;
+}
+
+/* 7.3) Message text size and color formatting */
+._11kfxpg0 {
+  font-size: 15.5px;
+  line-height: 21px;
+  color: #464b52 ;
+}
+
+:is(div[class*="vfrc-message _11kfxpg0"], ._1lbxmyd0, .g3dqfd8) {
+  border-radius: 20px !important;
+}
+
+
+/* 8) MAIN BUTTONS */
+/* 8.1) Main buttons customization */
+._1q15b0b1 {
+    font-size: 15px !important;
+  font-weight: 700 !important;
+    letter-spacing: .05em !important;
+    color: #FFF !important;
+    height: 40px !important;
+    border: 2px solid #deecf5 !important;
+    box-shadow: none !important;
+    border-radius: 15px !important;
+    padding: 22px 24px !important;
+    background: linear-gradient(120deg, #007ACC 0%, #005B99 50%, #003D66 100%) !important;
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    transition: background .2s ease, color .2s ease !important;
+  }
+  
+/* 8.2) Shine effect */
+._1q15b0b1::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0; left: -35%;
+    width: 70%; height: 100%;
+    background: linear-gradient(115deg,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,.32) 50%,
+                rgba(255,255,255,0) 100%);
+  transform: translateX(260%) skewX(-24deg);
+  opacity: 0;
+    transition:
+      transform .95s cubic-bezier(.22,.61,.36,1),
+    opacity   1ms linear .96s !important;
+    pointer-events: none !important;
+    will-change: transform, opacity;
+  }
+  
+/* 8.3) Main buttons hover effect */
+  ._1q15b0b1:hover{
+    background: linear-gradient(120deg, #003D66 0%, #005B99 50%, #007ACC 100%) !important;
+    color: #FFF !important;
+    border: 2px solid #deecf5 !important;
+  }
+
+  ._1q15b0b1:hover::after{
+  transform: translateX(-260%) skewX(-24deg);
+    opacity: 1;
+    transition:
+      transform .95s cubic-bezier(.22,.61,.36,1),
+      opacity   120ms ease 0s !important;
+  }
+  
+  ._1q15b0b1:focus-visible{
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(0,123,204,.25) !important;
+  }
+  
+/* 8.4) Main buttons padding */
+.g3dqfd6 {
+  padding-left: 50px;
+}
+
+
+/* 9) SYSTEM STATES */
+/* 9.1) End-of-chat label */ 
+.ticwq62 {
+  font-size: 0 !important;
+  position: relative !important;
+  line-height: 0 !important;
+  background-color: transparent !important;
+}
+
+.ticwq62::before {
+  content: "Chat byl ukončen" !important;
+  display: inline-block !important;
+  position: relative !important;
+  letter-spacing: .03em !important;
+  font-size: 13.5px !important;
+  line-height: 1.4 !important;
+  font-weight: 700 !important;
+  color: #FFF !important;
+  white-space: nowrap !important;
+}
+
+
+/* 10) CAROUSEL */
+/* 10.1) Carousel customization */
+._1lbxmyd1 {
+  display: block !important;
+  width: calc(100% - 30px) !important;
+  margin: 15px 15px 0 !important;
+  height: auto !important;
+  object-fit: cover !important;
+  border-radius: 20px 20px 0 0 !important;
+  box-sizing: border-box !important;
+  -webkit-user-drag: none !important;
+}
+
+/* 10.2) Carousel description */
+.vfrc-card--description._1lbxmyd5 {
+  font-size: 12px !important;
+}
+
+/* 10.3) Carousel title */
+._1lbxmyd4 {
+  letter-spacing: .02em !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #005B99 !important;
+}
+
+/* 10.4) Carousel main buttons */
+.vfrc-card button{
+  height: 40px !important;
+  border: 2px solid #deecf5 !important;
+  letter-spacing: .05em !important;
+  border-radius: 15px !important;
+  padding-top: 2px !important;
+  font-weight: 700 !important;
+  color: #FFF !important;
+  background: linear-gradient(120deg, #007ACC 0%, #005B99 50%, #003D66 100%) !important;
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  transition: background .2s ease, color .3s ease !important;
+  cursor: pointer !important;
+}
+
+/* 10.5) Carousel shine effect */
+.vfrc-card button::after{
+  content: "" !important;
+  position: absolute !important;
+  top: 0; left: -35%;
+  width: 70%; height: 100%;
+  background: linear-gradient(115deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.32) 50%, rgba(255,255,255,0) 100%);
+  transform: translateX(260%) skewX(-24deg);
+  opacity: 0;
+  transition: transform .95s cubic-bezier(.22,.61,.36,1), opacity 1ms linear .96s !important;
+  pointer-events: none !important;
+  will-change: transform, opacity;
+}
+
+.vfrc-card button:hover{
+  background: linear-gradient(120deg, #003D66 0%, #005B99 50%, #007ACC 100%) !important;
+  border: 2px solid #deecf5 !important;
+}
+.vfrc-card button:hover::after{
+  transform: translateX(-260%) skewX(-24deg);
+  opacity: 1;
+  transition: transform .95s cubic-bezier(.22,.61,.36,1), opacity 120ms ease 0s !important;
+}
+
+.vfrc-card button:focus-visible{
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(0,123,204,.25) !important;
+}
+
+/* 10.6) Carousel next buttons */
+.betklmg {
+  background-color: #FFF !important;
+  border: solid 2px #005B99 !important;
+}
+
+:is(.betklmc, .betklm5) {
+  height: auto !important;
+  width: 50px !important;
+  left: 307px !important;
+}
+
+:is(.betklma, .betklm4, .betklm6, .betklm7) svg {
+  background-color: #FFF !important;
+  background-image: url("https://trixtecheu.github.io/HOLESOV/images/icons/icon-arrow-carousel.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 38px 38px !important;
+}
+
+:is(.betklmc, .betklm5) svg {
+  background-color: #FFF !important;
+  background-image: url("https://trixtecheu.github.io/HOLESOV/images/icons/icon-arrow-carousel.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 38px 38px !important;
+  translate: 3% !important;
+}
+
+:is(.betklma, .betklmc, .betklm4, .betklm5, .betklm6, .betklm7) svg :is(path, g) {
+  display: none !important;
+  fill: none !important;
+  stroke: none !important;
+}
+
+
+/* 11) GENERATED BY AI BADGES */
+/* 11.1) Generated by AI icon */
+.vfrc-icon._1t7e06e0._11kfxpg8 svg {
+  visibility: hidden !important;
+}
+
+.vfrc-icon._1t7e06e0._11kfxpg8::after {
+  content: '' !important;
+  display: inline-block !important;
+  width: 24px !important;
+  height: 24px !important;
+  background-image: url('https://trixtecheu.github.io/HOLESOV/images/icons/icon-ai-sparkles.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  transform: translate(-74%, -18%) !important;
+}
+
+/* 11.2) Generated by AI text */
+._11kfxpg7 {
+  display: inline-block !important;
+  transform: translateX(-8%) !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+
+._11kfxpg6 {
+  background: #040b04 !important;
+  border-radius: 0 0 20px 20px !important;
+}
+
+
+/* 12) UTILITIES */
+/* 12.1) Widget scroll button */
+._1cosygz0 {
+  background-color: #FFF !important;
+  background-image: url("https://trixtecheu.github.io/HOLESOV/images/icons/icon-scroll-down.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+  border: solid 2px #005B99 !important;
+}
+  
+._1cosygz0 svg {
+  opacity: 0 !important;
+}
+
+
+/* 13) TEXT AREA FOR MESSAGE */
+/* 13.1) Text size in text area */
+.vfrc-input-container textarea.vfrc-chat-input::placeholder, ._1gdvh9t6 {
+  font-size: 16px;
+  position: relative;
+  display: flex;
+  letter-spacing: .03em !important;
+}
+
+._1gdvh9t1 {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 1px solid #E2E4E5;
+  background-color: #fff;
+  box-shadow: 0 3px 4px #00000005, 0 8px 42px -16px #00000014;
+  transition: border .15s ease, box-shadow .15s ease, border-radius .15s ease, opacity .15s ease;
+  padding: 10px 10px 10px 20px !important;
+}
+
+/* 13.2) Text content formatting - user input text styling */
+._1gdvh9ta {
+  width: 100% !important;
+  scrollbar-width: none !important;
+  border-color: transparent !important;
+  resize: none !important;
+  font-family: var(--_1bof89na) !important;
+  font-size: 15.5px !important;
+  box-sizing: border-box !important;
+  outline: transparent 0px !important;
+  padding: 2px 0 0 !important;
+  line-height: 20px !important;
+  color: #1a1e23 !important;
+}
+
+/* 13.3) Send button basic styles */
+button#vfrc-send-message,
+button.vfrc-chat-input__send,
+button[class*="vfrc-chat-input__send"] {
+  position: relative !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 9999px !important;
+}
+
+button#vfrc-send-message svg,
+button.vfrc-chat-input__send svg,
+button[class*="vfrc-chat-input__send"] svg {
+  display: none !important;
+}
+
+button#vfrc-send-message::before,
+button.vfrc-chat-input__send::before,
+button[class*="vfrc-chat-input__send"]::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  margin: auto !important;
+  width: 28px !important;
+  height: 28px !important;
+  background-color: currentColor !important;
+  mask: url("https://trixtecheu.github.io/HOLESOV/images/icons/icon-send.svg") no-repeat center / contain !important;
+  pointer-events: none !important;
+}
+
+/* 13.4) Send button - disabled state */
+button#vfrc-send-message.ngo489a,
+button.vfrc-chat-input__send.ngo489a,
+button[class*="vfrc-chat-input__send"].ngo489a,
+button[class*="ngo489a"],
+.vfrc-footer button#vfrc-send-message.ngo489a,
+.vfrc-footer button.vfrc-chat-input__send.ngo489a,
+.vfrc-footer button[class*="vfrc-chat-input__send"].ngo489a,
+.vfrc-footer button[class*="ngo489a"] {
+  color: #656d75 !important;
+  background-color: #f1f2f2 !important;
+  cursor: not-allowed !important;
+}
+
+/* 13.5) Send button - enabled state */
+.vfrc-footer:has(textarea:not(:placeholder-shown)) button#vfrc-send-message.ngo489h:enabled,
+.vfrc-footer:has(textarea:not(:placeholder-shown)) button.vfrc-chat-input__send.ngo489h:enabled,
+.vfrc-footer:has(textarea:not(:placeholder-shown)) button[class*="vfrc-chat-input__send"].ngo489h:enabled,
+.vfrc-footer:has(input[type="text"]:not(:placeholder-shown)) button#vfrc-send-message.ngo489h:enabled,
+.vfrc-footer:has(input[type="text"]:not(:placeholder-shown)) button.vfrc-chat-input__send.ngo489h:enabled,
+.vfrc-footer:has(input[type="text"]:not(:placeholder-shown)) button[class*="vfrc-chat-input__send"].ngo489h:enabled,
+button#vfrc-send-message.ngo489h:enabled:not(:disabled),
+button.vfrc-chat-input__send.ngo489h:enabled:not(:disabled),
+button[class*="vfrc-chat-input__send"].ngo489h:enabled:not(:disabled) {
+  color: #ffffff !important;
+  background-color: #005B99 !important;
+  box-shadow: 0 -1px #00000029 inset !important;
+}
+
+button#vfrc-send-message.ngo489h:hover:enabled,
+button.vfrc-chat-input__send.ngo489h:hover:enabled,
+button[class*="vfrc-chat-input__send"].ngo489h:hover:enabled,
+.vfrc-footer button#vfrc-send-message.ngo489h:hover:enabled,
+.vfrc-footer button.vfrc-chat-input__send.ngo489h:hover:enabled,
+.vfrc-footer button[class*="vfrc-chat-input__send"].ngo489h:hover:enabled {
+  background-color: #005B99 !important;
+}
+
+button#vfrc-send-message.ngo489h:active:enabled,
+button.vfrc-chat-input__send.ngo489h:active:enabled,
+button[class*="vfrc-chat-input__send"].ngo489h:active:enabled,
+.vfrc-footer button#vfrc-send-message.ngo489h:active:enabled,
+.vfrc-footer button.vfrc-chat-input__send.ngo489h:active:enabled,
+.vfrc-footer button[class*="vfrc-chat-input__send"].ngo489h:active:enabled {
+  background-color: #005B99 !important;
+}
+
+/* 13.6) Send button - hover state */
+button#vfrc-send-message.ngo489n:hover,
+button.vfrc-chat-input__send.ngo489n:hover,
+button[class*="vfrc-chat-input__send"].ngo489n:hover,
+.vfrc-footer button#vfrc-send-message.ngo489n:hover,
+.vfrc-footer button.vfrc-chat-input__send.ngo489n:hover,
+.vfrc-footer button[class*="vfrc-chat-input__send"].ngo489n:hover {
+  transform: scale(1.05) !important;
+}
+
+button#vfrc-send-message.ngo489n:active,
+button.vfrc-chat-input__send.ngo489n:active,
+button[class*="vfrc-chat-input__send"].ngo489n:active,
+.vfrc-footer button#vfrc-send-message.ngo489n:active,
+.vfrc-footer button.vfrc-chat-input__send.ngo489n:active,
+.vfrc-footer button[class*="vfrc-chat-input__send"].ngo489n:active {
+  transform: scale(1) !important;
+}
+
+input:is([type="button"], [type="submit"], [type="reset"]):disabled,
+input[type="file"]:disabled::file-selector-button,
+button:disabled,
+select:disabled,
+optgroup:disabled,
+option:disabled,
+select[disabled] > option {
+  color: graytext !important;
+}
+
+
+/* 14) FOOTER LOGO */
+/* 14.1) Logo (Creator) */
+.jsli365 {
+  display: inline-block !important;
+  width: 160px !important;
+  height: 40px !important;
+  background-image: url("https://trixtecheu.github.io/HOLESOV/images/badge-powered-by-trix-white.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  text-indent: 9999px !important;
+  overflow: hidden !important;
+  -webkit-user-drag: none !important;
+  transition: transform 0.6s ease, filter 0.8s ease !important;
+}
+
+.jsli365:hover {
+  transform: scale(1.05) !important;
+  filter: brightness(1) !important;
+}
+
+.jsli365:focus-visible {
+  outline: 2px solid rgba(0,0,0,0.25) !important;
+  outline-offset: 2px !important;
+  transform: scale(1.05) !important;
+  filter: brightness(1) !important;
+}
+
+
+/* 15) LAUNCHER */
+/* 15.1) Reset any fixed size */
+.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5, button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5, .vfrc-launcher, .f6dof81, .f6dof87.f6dof89, .f6dof86.f6dof88, div.f6dof87.f6dof89, div.f6dof8m.f6dof8o.f6dof8r.f6dof8f, div.f6dof87.f6dof89 {
+  width: auto !important;
+  height: auto !important;
+  min-width: auto !important;
+  min-height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* 15.2) Anchor: fix widget container to the viewport */
+._1emja3f9 {
+  position: fixed !important;
+  z-index: 999999 !important;
+}
+
+/* 15.3) Anchor position */
+._1emja3f9:has(#voiceflow-chat) {
+  bottom: 0 !important;
+  right: 0 !important;
+}
+
+/* 15.4) Launcher image circle */
+.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(img[alt="open chat"]), .vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(.f6dof8u.f6dof8w.f6dof8h) {
+  width: 75px !important;
+  height: 75px !important;
+  min-width: 75px !important;
+  min-height: 75px !important;
+  max-width: 75px !important;
+  max-height: 75px !important;
+  background-color: #0172BE !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  transform: none !important;
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+}
+
+/* 15.5) Wrapper that holds the size */
+div.f6dof80:has(img[alt="open chat"]) {
+  width: 80px !important;
+  height: 80px !important;
+  min-width: 80px !important;
+  min-height: 80px !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
+}
+
+.vfrc-button.vfrc-launcher img[alt="open chat"],
+.vfrc-button.vfrc-launcher img.f6dof8u {
+  width: 65px !important;
+  height: 65px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  transform: scale(1) !important;
+  transform-origin: center !important;
+  transition: transform 180ms ease !important;
+}
+
+.vfrc-button.vfrc-launcher:hover img[alt="open chat"],
+.vfrc-button.vfrc-launcher:focus-visible img[alt="open chat"],
+.vfrc-button.vfrc-launcher:hover img.f6dof8u,
+.vfrc-button.vfrc-launcher:focus-visible img.f6dof8u {
+  transform: scale(1.1) !important;
+}
+
+div._1emja3f9:has(#voiceflow-chat) {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+}
+
+.vfrc-launcher:hover img.f6dof8u,
+.vfrc-launcher:focus-visible img.f6dof8u,
+.vfrc-launcher:hover img[alt="open chat"],
+.vfrc-launcher:focus-visible img[alt="open chat"] {
+transform: scale(1.1) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+.vfrc-launcher img { transition: none !important; }
+}
+
+/* 15.6) Launcher image */
+button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(svg[viewBox="0 0 32 32"]) {
+  width: 10px !important;
+  height: 10px !important;
+  min-width: 10px !important;
+  min-height: 10px !important;
+  max-width: 10px !important;
+  max-height: 10px !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 32px 32px !important;
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  transform: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 15px !important;
+  margin-right: 15px !important;
+  margin-bottom: 15px !important;
+  position: relative !important;
+  bottom: auto !important;
+  right: 5px !important;
+}
+
+/* 15.7) Wrapper for the SVG */
+div.f6dof80:has(svg[viewBox="0 0 32 32"]), button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(svg[viewBox="0 0 32 32"]) div.f6dof87.f6dof89 {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  max-width: 42px !important;
+  max-height: 42px !important;
+}
+
+/* 15.8) Hide the built-in SVG */
+button.vfrc-button._1q15b0b0.c26d8x0._1q15b0b2.vfrc-launcher.f6dof81._1q15b0b0.c26d8x0._1q15b0b5:has(svg[viewBox="0 0 32 32"]) svg {
+  display: none !important;
+}
+
+/* 15.9) Hide system subtitles */
+.t1cwqp2, div.t1cwqp2, .t1cwqp1, div.t1cwqp1, div[class^="t1cwqp"], div[class*="t1cwqp"] {
+  color: transparent !important;
+  font-size: 0 !important;
+  visibility: hidden !important;
+  position: relative !important;
+  display: block !important;
+  height: 30px !important;
+  width: 100% !important;
+  margin: 8px 0 !important;
+}
+
+/* 15.10) Extra spacing below */
+._6r9xee0 {
+  margin-bottom: 60px !important;
+}
+
+/* 15.11) Yellow highlight */
+div._6r9xee3.o231sh1 {
+  position: relative !important;
+  z-index: 0 !important;
+  border-radius: 15px !important;
+  background-color: #0172BE !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+  transform-origin: center center !important;
+}
+
+div._6r9xee3.o231sh1 > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+
+/* 16) PRIVACY POLICY WINDOW */
+/* 16.1) Privacy policy banner title */
+._19yxzl22 {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  margin: 0 0 12px 0 !important;
+  color: #1a1e23 !important;
+  text-align: center !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* 16.2) Privacy policy banner text */
+._19yxzl23 {
+  font-size: 15.5px !important;
+  line-height: 1.5 !important;
+  color: #464b52 !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+/* 16.3) Privacy policy banner icon GDPR */
+._19yxzl26 {
+  position: relative !important;
+  width: 22px !important;
+  height: 22px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+._19yxzl26 svg {
+  display: none !important;
+}
+
+._19yxzl26::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: url("https://trixtecheu.github.io/HOLESOV/images/icons/icon-lock.png") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/* 16.4) Privacy policy window buttons customization */
+:is(.vfrc-privacy__primary-button, .vfrc-privacy__secondary-button) {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 15px !important;
+  padding: 12px 16px 12px !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  letter-spacing: .05em !important;
+  line-height: 1.4 !important;
+  transition: background .2s ease !important;
+}
+
+/* 16.5) Privacy policy primary button */
+.vfrc-privacy__primary-button {
+  background: linear-gradient(120deg, #007ACC 0%, #005B99 50%, #003D66 100%) !important;
+  color: #fff !important;
+  overflow: hidden !important;
+  border: 2px solid #deecf5 !important;
+}
+
+.vfrc-privacy__primary-button::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0; left: -35%;
+  width: 70%; height: 100%;
+  background: linear-gradient(115deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.32) 50%,
+    rgba(255,255,255,0) 100%
+  ) !important;
+  transform: translateX(260%) skewX(-24deg) !important;
+  opacity: 0 !important;
+  transition:
+    transform .95s cubic-bezier(.22,.61,.36,1),
+    opacity   1ms linear .96s !important;
+  pointer-events: none !important;
+  will-change: transform, opacity !important;
+}
+
+.vfrc-privacy__primary-button:hover {
+  background: linear-gradient(120deg, #003D66 0%, #005B99 50%, #007ACC 100%) !important;
+  border: 2px solid #deecf5 !important;
+}
+
+.vfrc-privacy__primary-button:hover::after {
+  transform: translateX(-260%) skewX(-24deg) !important;
+  opacity: 1 !important;
+  transition: transform .95s cubic-bezier(.22,.61,.36,1), opacity 120ms ease 0s !important;
+}
+
+.vfrc-privacy__primary-button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(0,123,204,.25) !important;
+}
+
+/* 16.6) Privacy policy secondary button */
+.vfrc-privacy__secondary-button {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important;
+  color: #1a1e23 !important;
+}
+
+.vfrc-privacy__secondary-button:hover {
+  background: #f7f7f7 !important;
+}
+
+.vfrc-privacy__secondary-button:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.1) !important;
+}
+
+/* 16.7) Privacy policy window border radius */
+._19yxzl21 {
+  border-radius: 25px;
+}
+
+
+/* 17) RESPONSIVE DESIGN */
+/* 17.1) Responsive chat window */
+.s9t60i0 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px #161a1e0f,#161a1e29 0 8px 80px;
+}
+
+div.vfrc-chat__container._1wkq7nf5._1wkq7nf8._1wkq7nf9 {
+  right: 15px !important;
+  bottom: 10px !important;
+  height: calc(112% - 104px) !important;
+  width: 450px !important;
+}
+
+/* 17.2) Responsive chat window */
+@media (max-width: 768px){
+  div.vfrc-chat__container._1wkq7nf5._1wkq7nf8._1wkq7nf9 {
+    height: 100% !important;
+    width: 100% !important;
+  }
+}
