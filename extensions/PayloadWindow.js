@@ -1,7 +1,6 @@
-/* TrixTech s.r.o. @2025 */
+/* TrixTech s.r.o. @2026 */
 
 (function (window, document) {
-
   var UX = {
     dwellMs: 30000,
     longStayMs: 60000,
@@ -37,9 +36,9 @@
 
   var MSG = {
     default: {
-      morning: 'Dobré ráno, jsem asistent školy. S čím vám mohu pomoci?',
-      day: 'Dobrý den, jsem asistent školy. S čím vám mohu pomoci?',
-      night: 'Dobrý večer, jsem asistent školy. S čím vám mohu pomoci?'
+      morning: 'Dobré ráno, jsem AI asistent města Holešov. S čím vám mohu pomoci?',
+      day: 'Dobrý den, jsem AI asistent města Holešov. S čím vám mohu pomoci?',
+      night: 'Dobrý večer, jsem AI asistent města Holešov. S čím vám mohu pomoci?'
     },
     deep: {
       morning: 'Hledáte něco konkrétního? Pomohu vám to rychle najít.',
@@ -62,9 +61,9 @@
       night: 'Jste zpět? Klidně mi kdykoli můžete položit další dotazy!'
     },
     return_long: {
-      morning: 'Vítejte zpět, potřebujete ještě něco zjistit k ZŠ nebo MŠ?',
-      day: 'Vítejte zpět, potřebujete ještě něco zjistit k ZŠ nebo MŠ?',
-      night: 'Vítejte zpět, potřebujete ještě něco zjistit k ZŠ nebo MŠ?'
+      morning: 'Vítejte zpět, potřebujete ještě něco zjistit o Holešově?',
+      day: 'Vítejte zpět, potřebujete ještě něco zjistit o Holešově?',
+      night: 'Vítejte zpět, potřebujete ještě něco zjistit o Holešově?'
     },
     session_expired: {
       morning: 'Dobré ráno, můžeme začít znovu. S čím vám pomohu?',
@@ -72,9 +71,9 @@
       night: 'Dobrý večer, můžeme začít znovu. S čím vám pomohu?'
     },
     idle_reminder: {
-      morning: 'Jsem tu pro informace o škole, školce i kontaktech.',
-      day: 'Jsem tu pro informace o škole, školce i kontaktech.',
-      night: 'Jsem tu pro informace o škole, školce i kontaktech.'
+      morning: 'Jsem tu pro informace o městě Holešov, službách i kontaktech.',
+      day: 'Jsem tu pro informace o městě Holešov, službách i kontaktech.',
+      night: 'Jsem tu pro informace o městě Holešov, službách i kontaktech.'
     },
     final_attempt: {
       morning: 'Stále něco hledáte? Napište mi a zkusíme to spolu.',
@@ -105,9 +104,9 @@
 }
 
 :root{
-  --holesov-primary:#007ACC;
-  --holesov-primary-hover:#005B99;
-  --holesov-border:#deecf5;
+  --holesov-primary:#D4B037;
+  --holesov-primary-hover:#A88A24;
+  --holesov-border:#F5E6B3;
   --holesov-text:#0b1720;
   --holesov-bg:#ffffff;
   --holesov-card-w:240px;
@@ -167,7 +166,7 @@
   display: flex !important;
   flex-direction: column !important;
   gap: 10px !important;
-  box-shadow: 0 16px 32px -16px rgba(0,0,0,.28) !important;
+  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.28) !important;
   font-family: var(--holesov-font) !important;
   margin: 0 !important;
   box-sizing: border-box !important;
@@ -217,7 +216,7 @@
 }
 
 #holesov-cta .holesov-title-accent{ 
-  color: #007ACC !important; 
+  color: #D4B037 !important; 
   margin-right: 3px !important; 
 }
 
@@ -240,14 +239,14 @@
   position: relative !important;
   overflow: hidden !important;
   padding: 10px 18px !important;
-  border: 2px solid #deecf5 !important;
+  border: 2px solid #F5E6B3 !important;
   border-radius: 15px !important;
-  color: #fff !important;
+  color: #FFFFFF !important;
   font-weight: 700 !important;
   letter-spacing: .05em !important;
   font-size: 15px !important;
   cursor: pointer !important;
-  background: linear-gradient(120deg, #007ACC 0%, #005B99 50%, #003D66 100%) !important;
+  background: linear-gradient(120deg, #DBBD57 0%, #D4B037 50%, #A88A24 100%) !important;
   transition: background .2s ease, color .2s ease !important;
   margin: 0 !important;
   width: 100% !important;
@@ -263,8 +262,8 @@
 }
 
 #holesov-cta #holesov-open.holesov-btn:hover{
-  background: linear-gradient(120deg, #003D66 0%, #005B99 50%, #007ACC 100%) !important;
-  border: 2px solid #deecf5 !important;
+  background: linear-gradient(120deg, #A88A24 0%, #D4B037 50%, #DBBD57 100%) !important;
+  border: 2px solid #F5E6B3 !important;
 }
 
 #holesov-cta #holesov-close.holesov-close{
@@ -278,7 +277,7 @@
   max-width: 24px !important;
   max-height: 24px !important;
   border-radius: 999px !important;
-  border: 1px solid rgba(0,0,0,.15) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
   background: #fff !important;
   color: #0b1720 !important;
   cursor: pointer !important;
@@ -286,7 +285,7 @@
   line-height: 1 !important;
   display: grid !important;
   place-items: center !important;
-  box-shadow: 0 8px 16px -10px rgba(0,0,0,.25) !important;
+  box-shadow: 0 8px 16px -10px rgba(0, 0, 0, 0.25) !important;
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box !important;
@@ -421,7 +420,7 @@
       '  <div class="holesov-card">',
       '    <button class="holesov-close" id="holesov-close" aria-label="Skrýt">×</button>',
       '    <div class="holesov-header">',
-      '      <img class="holesov-avatar" src="https://trixtecheu.github.io/HOLESOV/images/holesov-icon.jpg" alt="Holešov" draggable="false" ondragstart="return false;">',
+      '      <img class="holesov-avatar" src="https://trixtecheu.github.io/HOLESOV/images/holesov-chat-icon.png" alt="Holešov" draggable="false" ondragstart="return false;">',
       '      <strong class="holesov-title"><span class="holesov-title-accent">AI asistent</span><span class="holesov-title-rest">Holešov</span></strong>',
       '    </div>',
       '    <p class="holesov-desc" id="holesov-text">' + defaultMsg + '</p>',
