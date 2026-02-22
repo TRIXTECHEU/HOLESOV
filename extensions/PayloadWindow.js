@@ -116,8 +116,8 @@
 
 #holesov-cta.holesov-cta{
   position: fixed !important;
-  right: 18px !important;
-  bottom: 100px !important;
+  right: 40px !important;
+  bottom: 110px !important;
   z-index: 999999 !important;
   opacity: 0 !important;
   transform: translateY(8px) scale(.98) !important;
