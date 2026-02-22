@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Keyboard-Double-Arrow-Down--Streamline-Outlined-Material" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.41 19.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d4b037;
+        stroke: #d4b037;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="keyboard-double-arrow-down">
+    <path id="Vector" class="cls-1" d="M11.21,11.81l-5.81,5.81-1.4-1.4,6.6-6.6L4.01,3.02l1.4-1.4,8,8s-2.2,2.19-2.2,2.19Z"/>
+  </g>
+</svg>
